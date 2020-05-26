@@ -1,0 +1,44 @@
+{
+	"name":"sita ram",
+	 "age": 108,
+	 "gender" : "Unknown",
+	 "isGood": true,
+	 "primaryAddress":{
+	 	"street1" : "vaikunth lok",
+	 	"street2": "krishna gopi nagar",
+	 	"city": "gokul dham",
+	 	"state": "narayan sagar",
+	 	"pincode":108,
+	 	"isValid": true
+	 },
+	 "fans":["hanuman", "indra", "kannu" ]
+	 ,
+	 "logicalOperations": [true,false],
+	 "favouriteNumbers": [108,11,101,24]
+	 ,
+	 "secondaryAddreses":[{
+	 "street1" : "vaikunth lok 1",
+	 	"street2": "krishna gopi nagar 1",
+	 	"city": "gokul dham 1",
+	 	"state": "narayan sagar 1",
+	 	"pincode":1081,
+	 	"isValid": true
+	 },
+	 {
+	 "street1" : "vaikunth lok 2",
+	 	"street2": "krishna gopi nagar 2",
+	 	"city": "gokul dham 2",
+	 	"state": "narayan sagar 2",
+	 	"pincode":1082,
+	 	"isValid": true
+	 },
+	 {
+	 "street1" : "vaikunth lok 3",
+	 	"street2": "krishna gopi nagar 3",
+	 	"city": "gokul dham 3",
+	 	"state": "narayan sagar 3",
+	 	"pincode":1083,
+	 	"isValid": true
+	 }]
+	 
+}
