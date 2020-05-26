@@ -1,0 +1,90 @@
+Data strucure is just formatting the large bulk of data in a format which makes it manitani=bale to use/process
+Algorithm : means set of rules/logic which when implemened solves the problem
+eg: we have fruits randomly kept , this way it is not easy to maintain them when needed, so we keep them in basket : this is data structure
+eg: we need to create vegetable salad: for this we have steps like washing vegetables, chopping them, boiling them etc these are algorithm
+so data structure make algo feasibile as data is kept in good format , set of rules done to solve problem is algo
+
+primitive DS are provided oob by programming language like int, char etc
+non primitive DS are created by devloper like Arrays, arrayList tree etc
+
+Physical DS : This kind of structure actually hold the data eg array, linkedList
+Logical DS : The DS whihc creates logic to make use of physical DS eg: Tree, graph,
+Linear DS : Data strucure whihc have linking of data one to another in one direction, meaning one enttry can not link to more than one
+eg: arrays,linked list, but not tree and graph as in both tree and graph one element can have more than one next element
+
+Recursion:
+It has follwing properties
+a. same operation/methoid is called various time, but input changes to the operation every time
+b. every step should try to break the thing into samller part: 
+	-> eg in parser example we passed inner json object whihc is a small part of whole json, factoria we pass n-1 whihc is lesser than actual input
+c. There has to be  abase/termination condition: otherwise recursion will go on
+
+Looks like for loop has similar feature to that of recursion
+
+recursion vs looping
+looping is preferred in case when subproblem solution is different that main big problem
+recursion is preferred in case when sub problem solution is similiar to main , just change the input to same method and have a termination condition
+recursion is heavily used in Trees and graph data structure
+also used heavily in algo like divide and conquer , greedy algo etc
+time complexity and sapce complexity are higher as it puses and po methods in stack
+so it is recomended to use only when we need quick problem solving as it is easier to impement code using recursion and also when 
+we can ignore time and space complexity 
+
+methods are loaded on stack and if another method is called from one that alo got up in stack
+so methods are pcoesed from last one first and return goes to method from where it was called and so on
+
+Tree / Graph uses recursion heavily to insert data, find data etc
+
+Time complexity can be calcualted in 3 ways:
+a. omaga notation : This is the best possible time(as per data if else condition may change and hence time may vary).Algo can get executed in time frame less than this
+b. big o notaion: this is the worst possible time. Algo can not take more than this time
+c. theta notiaon: This is average of upper and lower bound time
+
+For searching an eleent in an array(linear DS means we can search from left to right one by one)
+a. Omeaga : O(1) 
+b. Big O -> O(n)
+c. theta : n/2
+
+time complezity examples:
+a. constant -> O(1) meaning finding an item in single sized array
+b. O(n) -> finding an item in n sized array unsorted
+c. O(log n)-> finding an item in n sized array sorted
+d. O(n log n) -> merge sort
+e. -> O(n power 2) -> finding distance between two nodes of a graph
+O(n) + O(1) -> O(n) -> O(1) stands nothing in front of O(1)
+O(1)+ O(2) -> O(1) -> constant remains constant and hence can be eliminated
+
+time complexity of recursive algo and iterative algo is O(n)
+
+
+Why Array index starts from 0:
+arrayy DS is organized in below way:
+reference variable kept in stack store the memory addrees of the first index/0th index of array
+so when we say arr[0] it goes to reference address memory and incrmeent 0 whihc gives 0th element
+if we say arr[1] then it got moemeory location and increment 1 whihc gives 1st elment and so on 
+
+if one meothd do not have any llop and have if else condition and assignement than time complezity ius
+O(1) + O (1) =... ->  O(1)
+time complexitu=ies of 2d array
+a. creating array -> O(1) space -> O(n)
+b. adding item -> O(nm) space-> O(1)  -> n is size of main array and m is size of inner array
+
+
+Dynamic programming enforces use of 2d array that helps to reduce timple complexity but it increaes space complexity
+
+Linked List:
+
+A linked list is a liner data structure -> meaning one element can trverse to another element but only one not more than once. as one node hold address to just one of other node
+it is of variable size unlike array ->  we can just make next elment of exisitng last node to new node
+Each node is independent and hold value and address to one of next node
+
+basic structure
+head(fixed) -> node1 -> node2 -> node3 ...... tail(fixed)
+
+difference weteen array and linkedlist:
+a. array is of fixed size linked list of variable size
+b. array is whole object howver each elemnt oif linkedlist is an object
+c. we can traver any index with O(1) complexity in array using arr[0] but it is always O(n) for linked list
+
+we need head to start searching for number as head will have node reference for s=first item , head do not contain any value
+we need tail because we need to insert at the last and we can not expect to start from head to find last item and then add item at end
