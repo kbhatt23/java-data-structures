@@ -1,0 +1,39 @@
+Linked List:
+
+A linked list is a liner data structure -> meaning one element can trverse to another element but only one not more than once. as one node hold address to just one of other node
+it is of variable size unlike array ->  we can just make next elment of exisitng last node to new node
+Each node is independent and hold value and address to one of next node
+
+basic structure
+head(fixed) -> node1 -> node2 -> node3 ...... tail(fixed)
+
+difference weteen array and linkedlist:
+a. array is of fixed size linked list of variable size
+b. array is whole object howver each elemnt oif linkedlist is an object
+c. we can traver any index with O(1) complexity in array using arr[0] but it is always O(n) for linked list
+
+we need head to start searching for number as head will have node reference for s=first item , head do not contain any value
+we need tail because we need to insert at the last and we can not expect to start from head to find last item and then add item at end
+
+usage of linked list : when we need dynamic sized collection
+in array we can get item at specific size but in linked list we need to traverse from first node connected to head and go one by one linearly to next node
+We can not get specific indexed item in linked list
+
+in array cells data are stored in RAM memory sequentially meaning [0] item stored in 001 address then [1] is stored in 002 whihc is next to previous cell
+this helps in finding item at individual index
+In linked list each itemis sotred randomly in RAM memory.however each are linked using next/previous node adddress
+
+complexities in linked list operations:
+a. creation  -> time -> O(1) space -> O(1)
+a. deletion  -> time -> O(1) space -> O(1)
+a. insertion  -> time -> O(n) space -> O(1)
+a. deletion  -> time -> O(n) space -> O(1)
+a. traversing  -> time -> O(n) space -> O(1)
+a. searching  -> time -> O(n) space -> O(1)
+
+Circular linked list can be used in cases like playing games as it keeps on going and after last first person gets chance to play, 
+	-> it keeps on going untill one person wins
+	
+Any Object becomes applicable for GC only if that object is not used by any valid object/stack variable
+If the first object that is using other than other -> then all remain avai;lable in mempory as soon as first one has valid reference
+once first is set to null all others are apppicable for GC 

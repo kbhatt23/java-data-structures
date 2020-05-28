@@ -27,6 +27,3 @@ public class HeadTailNode {
 
 }
 
-enum RootType {
-	TAIL, HEAD
-}
