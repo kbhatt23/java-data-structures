@@ -23,11 +23,11 @@ in array cells data are stored in RAM memory sequentially meaning [0] item store
 this helps in finding item at individual index
 In linked list each itemis sotred randomly in RAM memory.however each are linked using next/previous node adddress
 
-complexities in linked list operations:
+complexities in linked list operations/ same for single circular linked list
 a. creation  -> time -> O(1) space -> O(1)
 a. deletion  -> time -> O(1) space -> O(1)
 a. insertion  -> time -> O(n) space -> O(1)
-a. deletion  -> time -> O(n) space -> O(1)
+a. deletion of node -> time -> O(n) space -> O(1)
 a. traversing  -> time -> O(n) space -> O(1)
 a. searching  -> time -> O(n) space -> O(1)
 
@@ -37,3 +37,11 @@ Circular linked list can be used in cases like playing games as it keeps on goin
 Any Object becomes applicable for GC only if that object is not used by any valid object/stack variable
 If the first object that is using other than other -> then all remain avai;lable in mempory as soon as first one has valid reference
 once first is set to null all others are apppicable for GC 
+
+complexities in double circular linked list / same for double non circular linked list
+a. creation  -> time -> O(1) space -> O(1)
+a. deletion of entire list  -> time -> O(1) space -> O(n) -> as loop is needed to clear each node's previous link
+a. insertion  -> time -> O(n) space -> O(1)
+a. deletion  of node -> time -> O(n) space -> O(1)
+a. traversing  -> time -> O(n) space -> O(1)
+a. searching  -> time -> O(n) space -> O(1)
