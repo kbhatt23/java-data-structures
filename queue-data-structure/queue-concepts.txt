@@ -1,0 +1,19 @@
+Queue is a linear data structure(one elment have next elmenet as only one other element)
+Queue is a logical Data structure (meaning it do not store data ,it orchestracte data in physical DS)
+Queue uses physical DS like array or linked list for implementaiton
+and it provides orchestration methods.
+
+Queue follows FIFO prinicple
+meaning whoever comes first will be taken out first.
+Any element when added goes to last item
+Item at the first position is taken out when requested
+
+Queue have trhee types
+a.. using arrays circular queue
+b. using arrays : linear queue
+c. using linked list : no need of circular queue
+linked list one has dynamic size
+
+Just like stack queue also do not allow random access of numbers
+unless we dequeu the first elment and go till the elment we need we do not have other way
+This makes data incorruptible
