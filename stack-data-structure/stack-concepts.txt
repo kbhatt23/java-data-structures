@@ -1,0 +1,38 @@
+Stack is a logical Data structure meaning it do not actually hold data but uses 
+array , or linked list to hoold data, it just provide contract of usage
+
+stack is like a bucket following LIFO -> last in first out prinicple
+data whihc comes first gets loaded at the bottom, newer data comes at top and so on
+we can pop out data whihc is at top and then so on
+
+This can be used in browser back button functionlaity
+supoese we opended facebook -> google.com -> youtube,ocm -> instagram
+
+so it floowls LIFO
+
+\\
+  |instagram      | -> top of stack
+  |youtube
+  |google
+  |facbook   -? bottom of stack
+  |
+  
+Each push rolls down thte top element to bottom and new element beocmes top
+each pop takes out element at top and removes it
+-> In stack we can not remove item at any position before remoing all other elmenents present before it
+meaning elements which were before it in the stack top
+operations that can be performmed on stack:
+a. push -> data insertion at top
+b. pop -> data out from top
+c peek -> data fetch but not removed from top
+d. isEmpty() -> is stack empty
+e. isFull -> is stack full
+f. size: size of stack
+
+
+Keep in mind arrays can not have negative size , but 0 and other positive vlaues will hold
+-> for 0 size array insertion on 0 index will cause arrayindex out of bound exception
+
+We should use stack only in case we want LIFO operation like back button functionlaity in browser
+Since in this addition of item happens only on stack top and peek/pop happens only on stack top
+random access/element random serach is not good use case as it has to remove data from stack top until that element is found
