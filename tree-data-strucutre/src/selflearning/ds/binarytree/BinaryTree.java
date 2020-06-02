@@ -3,7 +3,6 @@ package selflearning.ds.binarytree;
 import java.util.ArrayList;
 import java.util.List;
 
-import jdk.nashorn.internal.runtime.FindProperty;
 import selflearning.ds.binarytree.traversal.genericqueue.QueueUsingArrays;
 
 public class BinaryTree {
@@ -170,6 +169,11 @@ public class BinaryTree {
 
 		}
 		return items;
+	}
+	
+	public void deleteTree() {
+		//enough fo rll other objects to be applicable for garbage collections
+		root= null;
 	}
 
 }
