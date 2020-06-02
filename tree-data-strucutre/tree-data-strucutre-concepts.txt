@@ -1,0 +1,41 @@
+A tree is a data structure that represents heirachical structure
+Follows parent child relationship
+It is a non linear DS (one element can have more than one next element)
+It is logical DS(meaining it uses physical DS like array/ linked list to store data)
+
+In tree a node can have more than once child node and that child node can not have child as parent node
+Meaning reverse tracking not posiibl in tree like general parent child relationship
+
+why we need tree
+array have good time capacity but linked list have same time complezxity
+with better space complexity(O(1)) as compared to array creation O(n)
+
+But if we want to enhance the search node capcaity from O(n) to O(log n) -> like we did in binary search of arrays
+we need tree basically binary search tree
+
+A tree node can have 0 to n number of child nodes
+Binary tree can have 0-2 number of child nodes at any level
+BST is a binary tree where left node is less and right is greater than main node
+
+Tree terminology
+
+Root: A node which do not have parent
+Edge:  Connection from parent to any child node
+leaf: A node which do not have child at all (last node)
+sibling : a node having same parent node
+ancestor : any node whihc is parent/grandparent /great grandparent etc, but differnet heirachy is ignored.
+Depth of node: means number of edges from root node to that node
+height of node: number of edges from that node to deepest node among child of that node
+depth of tree: means depth of root node -> always 0
+height of tree: height of root node
+ 
+ 
+ Recursion vs for loop
+ in recursion time compleezity is O(n) and since method stack is loaded n times at workjst case space complexity is O(n)
+ in loop time complexity is O(n) but sopace complexity is O(1)
+ 
+ Tree traversal:
+ preorder -> print node -> recurisve(left) -> recursive right
+ inorder -> recursive(left)-> print node -> recursive rihgt
+ postorder -> recurisve(left) -> recursive(right) -> print node
+ for all of above space complezity is O(n) becuase of stack loading in recursion and time complezity is O(n)
