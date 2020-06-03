@@ -39,3 +39,14 @@ height of tree: height of root node
  inorder -> recursive(left)-> print node -> recursive rihgt
  postorder -> recurisve(left) -> recursive(right) -> print node
  for all of above space complezity is O(n) becuase of stack loading in recursion and time complezity is O(n)
+ 
+ Deleting a node have following steps
+
+
+Finding the deepest node -> we shud do level order traversiong (using queue) and last one is deepest
+we shud copy the value of deep node and put in node to be deleted
+then remove linking/edge of second deepest node to deepest node in tree 
+
+Predecessor means node just before a node while traversing in in-order traversal 
+sucessor means node just after a node while traersing in in-order traversal
+deepest node means the last element found in level order traversal

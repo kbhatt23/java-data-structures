@@ -1,0 +1,27 @@
+We can implmement non linear data using binary tree
+using binary tree with array implementaion we have space complezity as O(n) in creation
+This is better O(1) in linked list implmentation
+However O(n) is time complexity of insertion/traversing etc
+we can use binary search tree to have reduce this time complexity as O(log n)
+It is better just like for a sorted array finding element have time complexity as O(n)
+which is better than O(n) in unsorted array
+
+A binary search tree is balanced meaning 
+data less than(using comparable/comparator interface) 
+
+TreeSet uses binary search tree D.s to store data
+Later on while using in order traversal it return result which is sorted
+
+Infact storing data in binary search tree and then traverse in order is a sorting technique
+
+Insertion and searching oin BST have time and space complezity as O(log n)
+As we divide the whole problem into two half and for one iteration it calls exactly one of the two
+this division makes time complexity as O(log n)
+same thing happens in binary search in array
+
+Two ways of traversing in tree
+BSF : breadth first search
+eg is level order traversal using queue
+
+DFS : depth first seach using pre post and in order traversal
+
