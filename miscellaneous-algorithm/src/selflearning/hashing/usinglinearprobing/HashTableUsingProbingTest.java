@@ -19,8 +19,10 @@ public static void main(String[] args) {
 	hashTable.insert("jai radha kanha");
 	//even thoug new string creates new object
 	//since hascode and equals are same it will return the data
-	System.out.println("find data "+hashTable.search(new String("jai kanha")));
+	//System.out.println("find data "+hashTable.search(new String("jai kanha")));
 	
-	System.out.println("find data second"+hashTable.search(new String("jai radha kanha")));
+	//System.out.println("find data second"+hashTable.search(new String("jai radha kanha")));
+
+	System.out.println("searching for collided item "+hashTable.search("jai radha madhav"));
 }
 }

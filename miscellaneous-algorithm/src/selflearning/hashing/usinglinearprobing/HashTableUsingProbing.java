@@ -66,6 +66,22 @@ public class HashTableUsingProbing<T> {
 				System.out.println("no collision while searching at index " + index + " data found " + data);
 				return (T) dataStore[index];
 			}
+			//else cacse when collision had happened
+			else {
+				// using linear probing for collision
+				for (int i = index + 1; i < dataStore.length; i++) {
+					if (dataStore[i] != null && dataStore[i].equals(data)) {
+						System.out.println("collision occurred but data found at index " + i);
+						return (T) dataStore[i];
+					}
+				}
+				for (int i = index - 1; i >= 0; i--) {
+					if (dataStore[i] != null && dataStore[i].equals(data)) {
+						System.out.println("collision occurred but data found at index " + i);
+						return (T) dataStore[i];
+					}
+				}
+			}
 		} else {
 			// using linear probing for collision
 			for (int i = index + 1; i < dataStore.length; i++) {
@@ -75,7 +91,7 @@ public class HashTableUsingProbing<T> {
 				}
 			}
 			for (int i = index - 1; i >= 0; i--) {
-				if (dataStore[i] == null && dataStore[i].equals(data)) {
+				if (dataStore[i] != null && dataStore[i].equals(data)) {
 					System.out.println("collision occurred but data found at index " + i);
 					return (T) dataStore[i];
 				}
@@ -100,7 +116,7 @@ public class HashTableUsingProbing<T> {
 				}
 			}
 			for (int i = index - 1; i >= 0; i--) {
-				if (dataStore[i] == null && dataStore[i].equals(data)) {
+				if (dataStore[i] != null && dataStore[i].equals(data)) {
 					System.out.println("collision occurred while deleting at index " + i);
 					dataStore[i] = null;
 				}
