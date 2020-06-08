@@ -1,12 +1,9 @@
 package selflearning.sorting;
 
-import java.util.Arrays;
-import java.util.stream.Collectors;
-
 public class SelfLearnedSorting {
 public static void main(String[] args) {
-	int[] numbers = {33,22,11,3,23,4,1,5,7,9,29};
-	
+	//int[] numbers = {33,22,11,3,23,4,1,5,7,9,29,23};
+	int[] numbers = {23,23,99,90,1,66,101,1008,108,1007};
 	for(int i =0 ; i< numbers.length ; i++) {
 		for(int j= i+1 ; j < numbers.length ; j++) {
 			int current = numbers[i];
@@ -17,7 +14,7 @@ public static void main(String[] args) {
 			}
 		}
 	}
-	String numbersSorted= Arrays.stream(numbers).mapToObj(String::valueOf).collect(Collectors.joining(","));
-	System.out.println(numbersSorted);
+	EmployeeUtils.printNumbers(numbers);
+	System.out.println(Math.ceil(3.8));
 }
 }

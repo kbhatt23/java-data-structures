@@ -1,0 +1,22 @@
+Sorting is rearrangment of things in order of ascending or descending
+In objects it uses compareto method to handle ordering
+2 types of sorting:
+a. spacious : meaning the kind of sort which needs extra space than the array
+b. non spacious: sorting technique which do not need extra space other than array
+c. stable: in case two entries are equal the actual ordering of main array is maintained.
+	-> this is quite useful in case of array of objects like person
+d. non stable: in case two objects are equal , after sort the order is not maintained
+
+Stable : means after sorting equeal items will have same order as in main array
+
+bubble sort: lets swap current index to next index in case next is smaller and repeat this until length-2 times
+
+selection sort : take minimum from main array and copy to specific index in another array
+
+
+				time complexity:               behaviour                         space complexity
+
+bubble sort        O(n2)                   stable & no need of extra memory             O(1)
+selection sort      O(n2)                   stable& need memory                        O(n2)
+insertion sort       O(n2)                   non stable                              O(1)
+bucket sort         O(n logn)/ O(n2)         stable can be used in multi thread       O(n)  
