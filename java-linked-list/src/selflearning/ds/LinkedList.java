@@ -151,4 +151,22 @@ public class LinkedList {
 			node=node.getNext();
 		}
 	}
+	
+	public void printReverse() {
+		if(head == null) {
+			throw new RuntimeException("data is not yet inserted");
+		}
+		LinkedListNode node = head.getNode();
+		printReverseNodeRecursively(node);
+	}
+
+	private void printReverseNodeRecursively(LinkedListNode node) {
+		
+		if(node == tail.getNode()) {
+			System.out.println("node found "+node.getValue());
+			return;
+		}
+		printReverseNodeRecursively(node.getNext());
+		System.out.println("node found "+node.getValue());
+	}
 }
