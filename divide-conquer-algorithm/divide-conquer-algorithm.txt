@@ -1,0 +1,15 @@
+Divide and conquer is a programming paradigm in whihc we break down a big problem recursively
+-> until the smallest unit is solvable and so on we solve all the smaller units and combine them to ultimately solve the big problem
+- The smaller units should be similiar in nature just like recursion
+- Do not use this in case the smaller units behave differently
+
+eg: fibonacci series, binary serach, merge sort etc
+
+Dynamic pprogramming is an extension of divide and conquer
+In divide and conquer at any step the solution's poart is not fixed
+so we break the big problem into smaller recurvice problems 
+	-> can be used using recursion
+In dynamic programmin we store the solution of any subproblem
+ -> so that if that repeats in future instead of calculating we can just use that and save time	
+ 
+ Dynamic programming can not be used in case when subproblem is never repeated io recursion

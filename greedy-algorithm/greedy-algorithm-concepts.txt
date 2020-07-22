@@ -1,0 +1,30 @@
+- Greedy algorithm is used in case of greedy choice scenarios
+- First point of magic framework is to solve using this in case not then we check for other solutions
+- it says solve the problem piece by piece.
+- lets say we have broken bricks and we ant to make a wall
+	- steps will be to pick the best at a time and use that and prepare layer by layer
+	-> meaning local solution(single piece of brick) cna be used one by one to lead to global solution(full wall creation)
+-used in  insertion sort etc
+	-> finding min of whole array each time until we get final sorted array
+ 
+Magic framework:
+- check for greedy choice if yes use greedy algo
+- if no greedy choice exist use divide and conquer
+- if divide and conquer not possible use dynamic programming 
+- if none matches use brute force
+
+problem 1:
+activity selection problem
+-> Given a set of activities(Each activity have start and end time) of a person
+	We need to find combination whihc can have mazimum activities done by person
+	
+------: Mostly in greedy algorithm we do some task so that the best chosen item is freezed and other items are taken to build
+-> best example is brikc and wall
+- first we choose the best possible bricke and freeze that and so on we pick other bricks to make wall
+
+problem 2:
+coin find problem
+-> Given a set of coins we need to create a fixed money amount
+-> as part of greedy we first sort the existing coins
+-	then we pick the highest and check if that can be reduced from ruppe and keep on adding count until this is greate than remaining ruppe
+	-> then we pick next coin(second greatest) -> do the same and so on 
