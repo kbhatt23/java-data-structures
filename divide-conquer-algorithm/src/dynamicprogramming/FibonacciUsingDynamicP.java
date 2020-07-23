@@ -18,6 +18,7 @@ public class FibonacciUsingDynamicP {
 			return memory[index];
 		}
 		int result =  findNumberAtSeries(index -1) + findNumberAtSeries(index-2);
+		System.out.println("storing index "+index + "inmemory wiht value "+result);
 		memory[index] = result;
 		return result;
 		

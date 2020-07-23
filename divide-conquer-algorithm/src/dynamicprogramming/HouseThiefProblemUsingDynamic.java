@@ -6,7 +6,8 @@ public class HouseThiefProblemUsingDynamic {
 	private static int[] memory;
 
 	public static void main(String[] args) {
-		int[] houses = new int[] { 6, 7, 1, 30, 8, 2, 4 };
+		//int[] houses = new int[] { 6, 7, 1, 30, 8, 2, 4 };
+		int[] houses = new int[] {20,5,1,13,6,11,40};
 		memory = new int[houses.length + 1];
 		int totalCollectionMax = calculateMAxCollection(0, houses);
 		System.out.println(totalCollectionMax);

@@ -13,3 +13,13 @@ In dynamic programmin we store the solution of any subproblem
  -> so that if that repeats in future instead of calculating we can just use that and save time	
  
  Dynamic programming can not be used in case when subproblem is never repeated io recursion
+ Types:
+ a. top down : when bigger problem is solved and the the smaller ones
+ b. bottom up: when smaller  problem is solved first and then bigger one
+ 
+ Top down approach is used in our code
+ 	-> when we continue to use recursion and just add memory D.S to store and return valie it is top-down
+ 	-> if we can somehow convert this into a for loop and still use D.S memory then it is bottom up
+ 	earlier we erote code during recursion chapter do do everything using loop and recursoin
+ 	if we use recursion it is slower and hence called top down appriach
+ 	of we use for loop it is faster and henced claled bottom up approach
