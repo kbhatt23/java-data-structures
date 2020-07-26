@@ -1,0 +1,79 @@
+- Data structure is a logical structure of data that helps in hanlding data in better way
+- Algorithm are the series of steps depending upon usage that can solve the problem
+- D.S and Algo are used in combination to handle complex business logic
+
+-Arrays are good use case when we wnat to get a random indexed value -> time complexity is O(1)
+	-> where as in linked list it is still O(n)
+-Time complexity is a way to find the performance wothout considering the hardware in an objective/logical manner
+- As Same algo will behave differently in different processors ,so this is very useful 
+O(n) -> also called linear time complexity -> a simple for/while loop
+O(1) - >constant -> a single line of execution outside for loop
+O(log n)-> logarithtic -> log to base2
+O(n2) -> Quadratic- > a for loop inside another for loop
+O(n logn) 
+
+Arrays are continguos blocks in memeory(one after the other -> sequential addresed)
+At creation we specify the size so that JVM allocates that block of memory for arry
+If we increase the size by creating new array it is not neccessary that it will attach to existing block of memory
+- each item in array blocks will have same memory size
+	-> for example int array will have each index memory be 4 bytes or 32 bits
+- Any object reference variable stores the memory address of the object
+- Same for array a refernece variable stores memmory address of first index and hence indices starts with 0 in arrays
+- Array allpows random access at any index with O(1) constant time completxity
+If x is the address fo 0th index
+- we know that all other indxes are continuous in memory
+lets say size of each ele,mnmt is y
+so memory of any index wil be x + index*y whihc is o(1) time complexity
+eg for integer each elmetn will have size as 4 bytes or 32 bit
+
+================bubble sort================
+- have a single for loop comparing indexes one by one and do swap if needed
+- on first iteration largest elment will go at the end
+- we need to do it size-1 times as each iteration is making the largest item push to right
+Stable Sort - it maintains the original order in case two numbers are equal _> whatever was leftost will remain on the left
+time complexity -> O(n2 -> quadratic)
+
+==============selection sort==================
+Type of greedy algo
+this is the basic double for loop and j-i+1 sorting i learnt
+Every iteration we pick the smallest number and keep at 0 index and increase the index and so on
+time complexity -> O(n)
+unstable stable sorting technique ->
+performs better than bubble sort as swapping is less
+
+========Merge Sort=========
+- type of divide and conquer
+- O(nlogn) time complexity
+- stable sort
+- uses recursion
+- merge sort uses memory on each of the two sized array and so on
+
+Even better can be Quick sory 
+- follows divide and conquer using recursion
+- time complexity is O(nlong n)
+- no new space is needed as no new temp array is created.
+- Quick sort is implemented in concept of pivot- > a number whihc have all the numbers greater than it on the right(might be unsorted) and lower on the left
+- We first find pivot of main array and then divide and conquer left and right subarrays until array have 1 size(no need to do anything as for 1 sized array it is at )
+- Unstable algorithm
+
+============Count Method===============
+- Based on assumption that we know the range of values that array will hold
+- this cal help to get time complexity t O(n) leve but is not very powerful
+- can be used in case of known ranges and also the range should not be very huge
+- cna be used for positive integers only and can not be used for float-	
+	-> becuae we use a temp array whose index represent the number in main array and value reprsent the count
+	-> since array can not have negative index and index in fractions theis can nt be used for negative numbers and floating data types of array to be sorted
+	-> also should not be used for an array having huge range of values as size of temp array will be huge and a lot of temp array's index will remain unused
+	-> even for huge range we can still use it in case a lot of different and disrtibuted values are there so that temp array's most of the index remains useful
+- can be done for 0 also but as of now we have assumed non zero number in main array to be sorted
+
+if main array is like : [4, 7, 3, 2, 8, 10, 6, 7, 1, 10]
+temp array will be like: [1, 1, 1, 1, 0, 1, 2, 1, 0, 2]
+By default this is not stable sort but we can make it stable using Map or other D.S
+
+===========Radix Sort==============
+- Can be used in radix and width of array elements are same
+- Radix means data type is same and widht mean size of individual elements of array
+good example : 3172,1235,3212,4739,4533 but this one is not good -> 3172,333,23,11
+
+-- Java OOB uses double pivot sort -> extension of quick sort with 2 pivots instead of 1
