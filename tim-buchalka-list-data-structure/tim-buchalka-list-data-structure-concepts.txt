@@ -1,0 +1,20 @@
+List -> abstarct data type representing the features a List can have, do not share how this data is stored and algo to consume the operations.
+ArrayList: Nothing but a dynamic sized array
+	-> good use case when we just need to iterate the content and have less modifications as time complexity will be O(1)
+	-> But in case of lot of insertions it will need to cretae new array with more capcaity and copythe content of old array
+	-> also in case of deletion it has to shift cells
+	-> orderd just like array but not sorted
+ArrayList set(index,val) method overrides the exiting value inthe mentioned index
+	-> whereas add(index,val) insert value at that index and shift cells, 
+	-> .add(val) method adds value at the end and increases size if needed 
+LinkedList: A doubly linked list implemenetaion
+	-> good use case when we need to insert a lot as no need of shfting the array index(uses next node linking)
+	-> also in case we need to delete or insert at middle as no need to shift cells
+	-> not good in case of read operations
+	-> even finding an element at index it will take O(n) complexity but in arraylist this will take O(1)
+	-> insertion in the middle will take O(n) complexity in arrayList but in linked list it will be O(1)
+	
+Difference between is that Vector methods are thread safe and arraylist methods are not synchronized
+-> Both the classes uses array to store data and both are implementing List abstract data type
+Linked list does not uses Arrays instead uses node concept hence it is not bound to size
+-> but even though we know the index time complexity to find elmenet is still O(n)
