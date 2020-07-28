@@ -28,6 +28,32 @@ public class DoubleCircularLinkedList<T> {
 		tailIndex++;
 	}
 
+	public void printNodesInfinite() throws InterruptedException {
+		if (head == null) {
+			throw new RuntimeException("data is not yet inserted");
+		}
+		// simulating to print whole list only once
+		DoubleLinkedListNode<T> node = head.getNode();
+		while (node.getNext() != null) {
+			System.out.println("Node Value " + node.getValue());
+			Thread.sleep(500);
+			node = node.getNext();
+		}
+	}
+
+	public void printReverseNodesInfinite() throws InterruptedException {
+		if (head == null) {
+			throw new RuntimeException("data is not yet inserted");
+		}
+		// simulating to print whole list only once
+		DoubleLinkedListNode<T> node = tail.getNode();
+		while (node.getPrevious() != null) {
+			System.out.println("Node Value " + node.getValue());
+			Thread.sleep(500);
+			node = node.getPrevious();
+		}
+	}
+
 	public void insert(int index, T value) {
 		handleEmptyList();
 		validateSizeIndex(index);
@@ -37,6 +63,8 @@ public class DoubleCircularLinkedList<T> {
 			node.setNext(head.getNode());
 			head.getNode().setPrevious(node);
 			head.setNode(node);
+			head.getNode().setPrevious(tail.getNode());
+			tail.getNode().setNext(head.getNode());
 			tailIndex++;
 		} else {
 			if (size() == index) {
@@ -91,21 +119,26 @@ public class DoubleCircularLinkedList<T> {
 
 	public void printAllNodes() {
 		handleEmptyList();
-		printNodesRecursively(head.getNode());
+		DoubleLinkedListNode<T> node = head.getNode();
+		for (int i = 0; i < size(); i++) {
+			System.out.println("Current Node " + node.getValue());
+			node = node.getNext();
+		}
+	}
+
+	public void printAllNodesReverse() {
+		handleEmptyList();
+		DoubleLinkedListNode<T> node = tail.getNode();
+		for (int i = size() - 1; i >= 0; i--) {
+			System.out.println("Current Node " + node.getValue());
+			node = node.getPrevious();
+		}
 	}
 
 	private void handleEmptyList() {
 		if (isEmpty()) {
 			throw new RuntimeException("Linked List is Empty");
 		}
-	}
-
-	private void printNodesRecursively(DoubleLinkedListNode<T> node) {
-		if (node == null) {
-			return;
-		}
-		System.out.println("Current Node " + node.getValue());
-		printNodesRecursively(node.getNext());
 	}
 
 	public void remove(int index) {
@@ -117,8 +150,9 @@ public class DoubleCircularLinkedList<T> {
 				// only one itme present
 				removeList();
 			} else {
-				head.getNode().getNext().setPrevious(null);
+				head.getNode().getNext().setPrevious(tail.getNode());
 				head.setNode(head.getNode().getNext());
+				tail.getNode().setNext(head.getNode());
 			}
 		} else {
 			DoubleLinkedListNode<T> currnetNode = findCurrentAndPresviousNodes(index).get(0);
@@ -126,8 +160,9 @@ public class DoubleCircularLinkedList<T> {
 			if (currnetNode == tail.getNode()) {
 				// deleting at the end
 				tail.setNode(currnetPreviousNode);
-				currnetPreviousNode.setNext(null);
+				currnetPreviousNode.setNext(head.getNode());
 				currnetNode.setPrevious(null);
+				head.getNode().setPrevious(currnetPreviousNode);
 			} else {
 				DoubleLinkedListNode<T> currnetNextNode = currnetNode.getNext();
 				currnetPreviousNode.setNext(currnetNextNode);
@@ -135,49 +170,34 @@ public class DoubleCircularLinkedList<T> {
 			}
 
 		}
-		tailIndex--;
+		if (tailIndex != 0) {
+			tailIndex--;
+		}
 	}
 
 	public void removeList() {
 		handleEmptyList();
-		DoubleLinkedListNode<T> node = head.getNode();
+		// DoubleLinkedListNode<T> node = head.getNode();
 		head = tail = null;
-		removeNodeReferences(node);
+		// removeNodeReferences(node);
 		tailIndex = 0;
 	}
 
-	private void removeNodeReferences(DoubleLinkedListNode<T> node) {
-		if (node == null) {
-			return;
-		}
-		node.setPrevious(null);
-		removeNodeReferences(node.getNext());
-
-	}
-
-	public void printeReverse() {
-		handleEmptyList();
-		printReverseNodesRecursively(tail.getNode());
-	}
-	private void printReverseNodesRecursively(DoubleLinkedListNode<T> node) {
-		if (node == null) {
-			return;
-		}
-		System.out.println("Current Node " + node.getValue());
-		printReverseNodesRecursively(node.getPrevious());
-	}
 	public int findIndex(T value) {
 		handleEmptyList();
 		DoubleLinkedListNode<T> node = head.getNode();
 		int index = 0;
 		boolean isFound = false;
-		while (node != null) {
+		while (true) {
 			if (node.getValue().equals(value)) {
 				isFound = true;
 				break;
 			}
+			if (node == tail.getNode()) {
+				break;
+			}
 			index++;
-			node= node.getNext();
+			node = node.getNext();
 		}
 		if (!isFound) {
 			throw new RuntimeException("Value " + value + " not found in list");

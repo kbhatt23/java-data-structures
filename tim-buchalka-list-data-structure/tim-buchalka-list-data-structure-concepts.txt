@@ -18,3 +18,8 @@ Difference between is that Vector methods are thread safe and arraylist methods 
 -> Both the classes uses array to store data and both are implementing List abstract data type
 Linked list does not uses Arrays instead uses node concept hence it is not bound to size
 -> but even though we know the index time complexity to find elmenet is still O(n)
+
+JDK provided Linked list is double linked list
+- meaning we can add element at the start as well at the end with O(1) time complexity
+- Along with list interface implementation , it also implement deque interface hence getting peek(), peekAtstart(),peekAtEnd(), poll() etc mthod
+	-> addFirst,addLast etc
