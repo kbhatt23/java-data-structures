@@ -23,3 +23,19 @@ JDK provided Linked list is double linked list
 - meaning we can add element at the start as well at the end with O(1) time complexity
 - Along with list interface implementation , it also implement deque interface hence getting peek(), peekAtstart(),peekAtEnd(), poll() etc mthod
 	-> addFirst,addLast etc
+	
+==================Stack==================
+Based on LIFO - >last in first out
+- any new items always comes at the top
+- any pop operation gives item at the top
+- no random access of ellment- > to get nth element you have to pop out all the elemnets before that
+
+Implemenations:
+a. array : 
+	-> if we are sure the max size of stack then we can use this
+	- > time complexity > push -> can be O(n) as we might have to grow the array in case it is already full
+		pop -> O(1) , peek O(1)
+	-> not ideal as sie can be fixed
+b. Linked list: 
+	-> good use case as we always manipulate at the head , single linked list will do the job as random access is not allowed
+	-> time complexity of push pop peek all will be O(1) 

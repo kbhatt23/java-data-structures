@@ -27,7 +27,6 @@ public class SingleLinkedList<T> {
 			tail.setNode(node);
 		}
 	}
-
 	public void insert(int index, T value) {
 		handleEmptyList();
 		validateSizeIndex(index);
@@ -80,6 +79,10 @@ public class SingleLinkedList<T> {
 		if (head == null) {
 			throw new RuntimeException("Linked List is Empty");
 		}
+	}
+	
+	public boolean isEmpty() {
+		return head == null;
 	}
 
 	private void printNodesRecursively(SingleLinkedListNode<T> node) {
