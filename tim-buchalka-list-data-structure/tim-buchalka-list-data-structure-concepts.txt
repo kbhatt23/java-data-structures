@@ -39,3 +39,32 @@ a. array :
 b. Linked list: 
 	-> good use case as we always manipulate at the head , single linked list will do the job as random access is not allowed
 	-> time complexity of push pop peek all will be O(1) 
+	
+Java provide OOB Stack class that extends Vector and it is not recommended now as it has methods synchronized
+- Instead we can use interface deque for it and class name is ArrayDeque
+- But this class uses array for internal storage so push method can be of O(n) time complexity in case array is full
+- Another class LinkedList that implements list and Deque both -> this can be used for list implementatio of stack
+	-> peekfirst a, addFirst can be used
+	hence linkedlist class in jdk can be used for both list and stack implmeentation
+	
+Best approach will be to create our own stack class and put LinkedList as an instance variable and just use that 
+	so that new devlopers do not accidentally call List interface methods of the class 
+	-> just show push, pop, peek methods as thats what stack is all about
+	
+Methods of Queue:
+offer , peek, poll(same as pop from stack but it return object that was added first)
+we can implement using array or linked list(preferred)
+	- > insertion at the tail and poll/removal from head
+	
+ArrayBlocking queue -> A queue implmentaion using array and have blocked behavious
+	-> part of concurrent collection
+	-> on removal if all items are removed it blocks unitl another thread inserts item and again once done it start dequeuing again
+	-> on addition if max limit is reached it blocks until another thread deques element to make space to be inserted
+	-> implementation of producer consumer
+	-> capcaiuty do not change -> do not resize the array storage
+	-> thread safe
+Queue is an interface that follows FIFO meaning insertion happens at tail and removal happens at head
+Deque interface is extension of Queue -> also knows as double ended queue
+	-> insertion/removal at both head and tail are there
+ArrayDeque -> arra based implemetation of Deque interface -> insertion temoval at head nad tail both are presenet
+	=> preferred over Stack class that extends Vector and have synchronized methods

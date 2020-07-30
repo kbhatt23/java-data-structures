@@ -140,4 +140,8 @@ public class SortUtility {
 		}
 		return merged;
 	}
+	
+	public static int[] findRadisArrays() {
+		return new int[] {18,25,14,11,32,45,67,87,62};
+	}
 }

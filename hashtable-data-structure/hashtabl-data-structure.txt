@@ -1,0 +1,65 @@
+Hashtable is used as key value data storage
+-> This provides speedy retriveal of data as hasing is used 
+Main purpose of hashtable is to allow O(1) time complezity while rerieving item
+-> for this they need a key object tand a hashing function
+	Based on hashing function we find the index of array(assuming hashing is greate making only one item at each index of array)
+	 then we can retrieve item from that index of array(henc time complexity is O(1))
+===
+Generally searching any value in an array/list is O(n)
+however using hashing we can use one key as input and we store value at that index
+-> so if hashcode is created in intelligent way each item in array will be unique
+-> so retrieval can involve O(1) time complexity 
+
+-> unlike array where index is the key of array whihch is integer -> here we can use even Any object.
+-> It stores data ultimately in array only
+	-> so we have a technique called hasing(uses hashcode method of class)
+	-> this converts the key(any object) and convert to integer whihc can be used to store Value object in Array
+
+Load factor:
+As name suggest if load factor is high meaning most of the items in array is used
+	-> this can lead to more collision(more objects stored in same index(like linked list))
+If Load factor is low meaning a lot of empty spaces will be there in array
+
+Steps in insertion:
+- Get key and use its hashCode method -> divide by size of array
+	-> this will give u index of array where to store
+	-> in case of collision we can put value in next elmeent of last item/tail of linked list
+
+Steps in fetching the value
+- Get key and use its hashCode method -> divide by size of array
+	-> this will give u index of array where to search for
+	-> iterate the linked list present at that index form head to tail and break once equal methods return true
+	
+	
+Ways to handle collision in hashtable:
+a. linear probing : in this once we found that one index of array is occupied we check next unitl we reach end
+	-> if still not found then we check indices before the hashed index result until 0 is found
+	Same steps is done while get method as well
+	
+b. Linked list/chaining approach:
+	In linear probing we are consuming a lot of spaces in array so if more items come in shashtable we need to grow array and copy the indices
+	> chianing is approach where each node have next item linking
+HAasing methods:
+	- > get to stirng of key object , break the charachters and take it as int and sum all the charachters, modulus by length of toString method
+			, then oince this value is returned that is called hashcode , do hashcode % length of array -> will give you index
+	-> in java we cna use hashcode method and do % with array size and that gives u index of array to insert	
+remove(Object ) is always slower tha remove(int index) > as we are skipping the equals check before removnig the item	
+
+Time complexity of get method will depend upon quality of hashing method
+-> it wil be aroun O(1+k) wherer k is the size of element's linked list size
+if hashcode is good k will be significantly low
+-> It also depends upon load balancing factor as if load balaning factor is kept decent it can make sure size of array is handled so that 
+	more items can remain in array at 0th index of linked list present on array index
+	load factor should be caluclated smartly as load factor means how loaded is array storage
+	If load factor is low then that means lot of array indices might be empty and are useless
+	If load factor is high then that can cause a lot of colission
+	
+In hashmap: contains key is faster than containsValue as key is the hashing method input that can help us go directly to arry index
+(that may have collision but still better than value where we have to traverse each element)	
+
+//print all will show items in insertion order by default for linkedHashmap, for hashmap it is random
+	//meaning once we sort map then we can store in linekd hashmap so that while fetching/iterating we get items in insertion order
+	
+hashtable do not allow null either in key or val -> map allow one null key and n number of null values
+hashtable methods are synchronized -> map methods are not synchronized	
+hashtable extends Doictionary class -> hashmap implmenets map interface

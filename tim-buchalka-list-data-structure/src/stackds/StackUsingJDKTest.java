@@ -2,10 +2,10 @@ package stackds;
 
 import util.Employee;
 
-public class StackUsingLinkedListTest {
+public class StackUsingJDKTest {
 
 	public static void main(String[] args) {
-		StackUsingJDK<Employee> stack = new StackUsingJDK<>();
+		StackUsingLinkedList<Employee> stack = new StackUsingLinkedList<>();
 		Employee e1 = new Employee(1, "ganesh", 101);
 		Employee e2 = new Employee(2, "mahesh", 999);
 		Employee e3 = new Employee(3, "suresh", 108);
@@ -24,11 +24,6 @@ public class StackUsingLinkedListTest {
 		System.out.println(stack.size());
 		System.out.println(stack.isFull());
 		System.out.println(stack.isEmpty());
-		System.out.println("printing using iterator starts");
-		//iterator implementatio do not pop out
-		//it uses peek
-		stack.printAllItems();
-		System.out.println("printing using iterator completes");
 		int size  =stack.size();
 		for(int i =0 ; i<size; i++) {
 			System.out.println("poping item "+stack.pop());

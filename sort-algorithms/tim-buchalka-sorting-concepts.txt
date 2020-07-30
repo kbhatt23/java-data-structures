@@ -77,3 +77,11 @@ By default this is not stable sort but we can make it stable using Map or other 
 good example : 3172,1235,3212,4739,4533 but this one is not good -> 3172,333,23,11
 
 -- Java OOB uses double pivot sort -> extension of quick sort with 2 pivots instead of 1
+
+Bucket sort is a technique qhere based on assumption we uses buckets
+Like radix sort we assume that radix and width is same for all the numbers of array
+time complexity can reach O(n)
+We hash the array elements based on value and divide intosmaller arrays, making it buckets
+We divide in a way that the smallest element in that array is still greater thatn the greatest elment in previous bucket
+So once we sort individual buckets and then we just need to merge from left to right(as number are dicide in such way)
+Bucket sort is also based on assumption that radix and width of elements of array are same

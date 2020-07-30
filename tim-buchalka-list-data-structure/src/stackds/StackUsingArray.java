@@ -54,6 +54,7 @@ public class StackUsingArray<T> implements IStack<T> {
 			throw new RuntimeException("Stack is already empty");
 		}
 		T value = (T)storage[--headIndex];
+		//not focussing on reducing the array size
 		return value;
 	}
 
@@ -64,6 +65,7 @@ public class StackUsingArray<T> implements IStack<T> {
 		}
 		int indexToFind = headIndex-1;
 		T value = (T)storage[indexToFind];
+		//not focussing on reducing the array size
 		return value;
 	}
 
