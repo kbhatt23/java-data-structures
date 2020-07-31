@@ -63,3 +63,7 @@ In hashmap: contains key is faster than containsValue as key is the hashing meth
 hashtable do not allow null either in key or val -> map allow one null key and n number of null values
 hashtable methods are synchronized -> map methods are not synchronized	
 hashtable extends Doictionary class -> hashmap implmenets map interface
+
+In case we are iteration any list and within that for loop we try to remove any item then it will throw concurrnet modification exeption
+-> better way is to have remove list prepared and iterate remove list and then call remove method of actual list within this loop
+-> so in case we aretrying to remove an item within the iteration of same collection it throws concurrnet modification exception

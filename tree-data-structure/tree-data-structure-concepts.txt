@@ -1,0 +1,36 @@
+A tree is a data structure used in case of parent child heirachhcal data set
+For example a folder structure or class heirachy
+- Each item is called node
+- Each node can have only max 1 parent or 0 parent
+- Each node can have 0 or n number of children
+- A node with no parent is called root
+- There can be onlky one root in a tree
+- A node that have no children is called leaf
+- There can be 0-n number of leafs in a node
+- Each parent joins childerns using Edge that points form parent to child
+- A subtree is combination of root at any index and its whole child set recursively till end
+- A subtree of root node will be whole tree
+- unlike graph we can not have cycles in path of tree
+	-> meaning if A -> b- C - A (not posible to have a as child of its ancestor
+- Ancestor : Any node that have direct edge path in reverse order froma  node
+-> meaning root is the ancestor of all nodes
+Depth : Number of edges from root to any node is called depth of that node
+- Depth of root is always 0
+- Depth of leaf is always the max edges
+Height: Height of a node means number of edges from deepest node to it in reverse order
+- height of leaf node is always 0
+
+Binary tree has all features of normal tree other than each node will have 0,1 or 2 child nodes only
+- Full binary tree means a tree that have all the nodes apart from leaf nodes to have both left and right child
+- Binary search tree has all properties of binary tree plus every nodes'left child is smaller than root
+		and every right child node of any node is greater than value of that node
+- Binary search tree is never good for storing items that are sorted ascending or descending
+	as it will have operations like insertion, search, deletion in O(n) as in both cases we will have nodex on either left only or right only
+	and hence while we iterate we end up iterating all the element in worst case
+	In normal Binary search tree these operations are O(log n) as even in worst case we do not travel all the elements	
+	
+if we insert elements in Binary search tree and then do in order traversal(left recursive -> self -> right recursive) then it prints the item in sorted order
+Thats why Sorted Set Implmnetation is called TreeSet as it used binary search tree	
+
+In binary search tree the left most element is always the minimum and right most element is always the maximum
+-> time complezity will be O(log n) for finding min, max , any search value, insertion, deletion, etc
