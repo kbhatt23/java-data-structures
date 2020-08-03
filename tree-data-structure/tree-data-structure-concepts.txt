@@ -34,3 +34,52 @@ Thats why Sorted Set Implmnetation is called TreeSet as it used binary search tr
 
 In binary search tree the left most element is always the minimum and right most element is always the maximum
 -> time complezity will be O(log n) for finding min, max , any search value, insertion, deletion, etc
+
+Binary Search Trees are used in TreeSet and Treemap implementations
+in Treeset each node represents the value and in treemap each node can have key and value associated
+
+Binary HEap:
+- It is nothing but a subtype of a binary tree meanning each node can have 0,1 or 2 children
+- It has to be a complete binary treee menas all the levels will be full with nodes excpt the last one,
+	-> and the last one will be kept at the leftmost of the nodes
+- Either all nodes will have childer value lower than the parent node or greater than
+	-> Max heap : every node is greater than its child node , If we traverse from top to bottom it goes in descending order
+	-> Min heap : every node is less than its child node , If we traverse from top to bottom it goes in scending order
+	-> root node in max heap will have max value at root of heap and fetcing max will be O(1) constant time operation
+	-> root node in min heap will have min value at root of heap and fetcing min will be O(1) constant time operation
+
+The method of insertion using a queue and adding the item in queue untils left is null and right is null is for creating complete binary tree
+	-> meanin such tree will have all the levels until the last level to be completely filled
+	-> in the last level we will have all items aded to the left
+Formulae based 
+Array at index i
+ left child position in array : (2*i)+1
+ right child position in array: (2*i)+2
+ for any child at index x position of its parent : (x-1)/2
+
+ In heap we will use the queeing prcinciple and als can use above equations to insert elements in array
+ 	-> after inserting the item at end of index we find its parent and if that is lesser than child we sawap an keep on repeating until parent is gereater than that value
+ 	-> this is for max heap for min heap condition will be reverse
+ 	
+ Time complexity of heapify below and top is O(log n) as ever time we have to swap based on child /parent only
+ Time coimplexity of insert -> O(log n)
+ Time Complexity of delete : If index is provided it is O(log  n) only for child or parent swaps
+ If index is not know than it is O(n)
+ Time complexity of finding min/max is  O(1) : constant
+ - mostly in heap we care about peeking and removing only root(min or max) -> O(log n ) as index is known
+ 	- can not use binary search to find index
+ An example of Binary heap is Priority Queue in java
+ It uses min binary heap where minimum prioerty element is at root and once we peek it gives that
+ So example in integer we insert and qhile we peek it will give minimum number , so priority is calculated based on number/Integer comparator itself
+ It is based on Array
+ - not synchornized for sync version use Priorityblockingqueue
+ Priority Quque can be used for classes whihc implements comparable or otherwise pass a custom comparator for identifying the priorities
+ Since it is min heap as per comparator whatever is lowest comes at root and so on
+ 
+ -> if we will use toArray methid it prints the actual array of storage
+ meanin any ith index will hva e child at 2*i+1 and 2*i+2(right) and any index will have parent at (i-1)/2
+ 
+ Hashset uses hashmap to store value, only one null is allowed n elements are unique
+ Since it uses hashmap iterator will give random values n perfrormance is good no method to find specific element
+ linkedhashset iterates elements in insertion order uses hashmap and linked list
+ tree set uses binary search tree and do in order traversal to sort items
